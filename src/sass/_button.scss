@@ -1,0 +1,22 @@
+.cont-button {
+
+ text-align: center;
+ margin-top: 10px;
+
+ button {
+     min-width: 100px;
+     min-height: 50px;
+     background-color: burlywood;
+     border: 2px solid navy;
+     cursor: pointer;
+
+    transition: transform 250ms ease-in-out;
+     &:not(:last-child) {margin-right: 10px;}
+
+     &:hover {
+      font-weight: 700;
+      transform: scale(1.1, 1.1);
+      background-color: olive;
+     }
+ }
+}
