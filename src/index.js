@@ -6,7 +6,7 @@ const body = document.querySelector('body');
 const startBtn = document.querySelector('[data-action="start"]');
 const stopBtn = document.querySelector("[data-action='stop']");
 
-let intervalId;
+let intervalId = null;
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
