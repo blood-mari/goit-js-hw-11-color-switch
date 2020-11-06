@@ -19,11 +19,14 @@ const onSwitch = () => {
 const onChangeStart = () => {
   stopBtn.addEventListener('click', onChangeStop, { once: true });
   interval = setInterval(onSwitch, 1000);
+  startBtn.textContent = "Click Stop!";
 }
 
 const onChangeStop = () => {
   clearInterval(interval);
   startBtn.addEventListener('click', onChangeStart, { once: true });
+  startBtn.disabled = false;
+  startBtn.textContent = "Start";
 }
 
 startBtn.addEventListener('click', onChangeStart, { once: true });
