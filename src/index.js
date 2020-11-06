@@ -6,7 +6,7 @@ const body = document.querySelector('body');
 const startBtn = document.querySelector('[data-action="start"]');
 const stopBtn = document.querySelector("[data-action='stop']");
 
-let interval;
+let intervalId;
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -18,12 +18,12 @@ const onSwitch = () => {
 
 const onChangeStart = () => {
   stopBtn.addEventListener('click', onChangeStop, { once: true });
-  interval = setInterval(onSwitch, 1000);
+  intervalId = setInterval(onSwitch, 1000);
   startBtn.textContent = "Click Stop!";
 }
 
 const onChangeStop = () => {
-  clearInterval(interval);
+  clearInterval(intervalId);
   startBtn.addEventListener('click', onChangeStart, { once: true });
   startBtn.textContent = "Start";
 }
