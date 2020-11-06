@@ -25,7 +25,6 @@ const onChangeStart = () => {
 const onChangeStop = () => {
   clearInterval(interval);
   startBtn.addEventListener('click', onChangeStart, { once: true });
-  startBtn.disabled = false;
   startBtn.textContent = "Start";
 }
 
